@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import quizImg from "./image/quiz.svg"
+import {quizImg} from "./image/quiz.svg"
 
 function Home({ handleChange, category, difficulty, handleName, name, handleSubmit }) {
 
