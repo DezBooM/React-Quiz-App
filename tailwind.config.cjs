@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         "caveat": "Caveat",
         "quicksand": "Quicksand"
+      },
+      screens: {
+        "ipad": "820px"
       }
     },
   },

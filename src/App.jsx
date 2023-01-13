@@ -47,7 +47,7 @@ function App() {
   }, [name])
 
   return (
-    <div className="h-screen md:h-full lg:h-screen box-border font-quicksand bg-gray-800 bg-fixed">
+    <div className="h-screen sm:h-full ipad:h-screen lg:screen box-border font-quicksand bg-gray-800 bg-fixed">
       <Header />
       <Routes>
         <Route path="/" element={<Home handleChange={handleChange} {...searchParams} handleName={handleName} {...name} handleSubmit={handleSubmit} /> } />
