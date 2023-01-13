@@ -24,7 +24,7 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
 
   return (
     <div className="flex flex-row-reverse justify-center my-2">
-      <img src="/quiz.svg" alt="Quiz image" />
+      <img src=".public/quiz.svg" alt="Quiz image" />
       <form className="flex flex-col items-center justify-start mt-20 gap-10" onSubmit={handleSubmit} >
         <input 
           className="border border-cyan-300 bg-gray-700 text-cyan-300 rounded-lg outline-none px-4 py-1 w-2/3 placeholder-cyan-300" 
