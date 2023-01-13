@@ -33,20 +33,20 @@ function Question({ questions, currentQuestion, options, correct, setScore, setC
     }
 
   return (
-    <div className="mt-10 text-cyan-300 flex flex-col items-center">
+    <div className="mt-4 md:mt-10 text-cyan-300 flex flex-col items-center">
         <h2 className="text-2xl">Question {currentQuestion + 1}</h2>
-        <h1 className="text-4xl my-5">{questions[currentQuestion].question.replaceAll("&quot;", `"`).replaceAll("&#039;", "'")}</h1>
-        <div className="mt-4 grid grid-cols-2 gap-10">
+        <h1 className="text-2xl md:text-4xl mx-2 text-center my-5">{questions[currentQuestion].question.replaceAll("&quot;", `"`).replaceAll("&#039;", "'")}</h1>
+        <div className="mt-4 flex flex-col w-11/12 md:w-4/6 md:grid md:grid-cols-2 gap-4 md:gap-10">
             {options && options.map(option => (
             <button
-                className={`px-10 py-3 ${style} disabled:opacity-50 text-gray-800 rounded-lg font-semibold text-xl ${selected && handleSelect(option, style)}`} 
+                className={`px-10 py-3 ${style} disabled:opacity-50  text-gray-800 rounded-lg font-semibold text-xl ${selected && handleSelect(option, style)}`} 
                 key={option}
                 disabled={selected}
                 onClick={() => handleCheck(option)}>{option.replaceAll("&quot;", `"`).replaceAll("&#039;", "'")}
             </button>))}
         </div>
         <button 
-            className="mt-10 px-10 py-1 bg-gray-700 font-semibold rounded-full"
+            className="mt-10 px-12 md:px-10 py-3 md:py-1 text-3xl md:text-base bg-gray-700 font-semibold rounded-full"
             onClick={next}
             disabled={!selected}>Next
         </button>

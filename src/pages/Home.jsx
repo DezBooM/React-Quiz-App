@@ -24,18 +24,18 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
   }, [])
 
   return (
-    <div className="flex flex-row-reverse justify-center my-2">
+    <div className="flex flex-col mx-2 md:mx-0 md:flex-row-reverse justify-center my-2">
       <img src={quizImg} alt="Quiz image" />
-      <form className="flex flex-col items-center justify-start mt-20 gap-10" onSubmit={handleSubmit} >
+      <form className="flex flex-col items-center justify-start mt-4 md:mt-20 gap-2 md:gap-10" onSubmit={handleSubmit} >
         <input 
-          className="border border-cyan-300 bg-gray-700 text-cyan-300 rounded-lg outline-none px-4 py-1 w-2/3 placeholder-cyan-300" 
+          className="border border-cyan-300 bg-gray-700 text-cyan-300 rounded-lg outline-none px-4 py-1 w-full md:w-2/3 placeholder-cyan-300 text-xl md:text-base"
           type="text" 
           placeholder="Enter your name" 
           value={name} 
           onChange={handleName} 
           required/>
         <select  
-          className="border border-cyan-300 outline-none w-2/3 rounded-md text-cyan-300 bg-gray-700 px-3 py-1"
+          className="border border-cyan-300 outline-none text-xl md:text-base w-full md:w-2/3 rounded-md text-cyan-300 bg-gray-700 px-3 py-1"
           name="category" 
           onChange={handleChange} 
           value={category} 
@@ -48,7 +48,7 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
           })}
         </select>
         <select 
-          className="border border-cyan-300 outline-none w-2/3 rounded-md text-cyan-300 bg-gray-700 px-3 py-1"
+          className="border border-cyan-300 outline-none text-xl md:text-base w-full md:w-2/3 rounded-md text-cyan-300 bg-gray-700 px-3 py-1"
           name="difficulty" 
           onChange={handleChange} 
           value={difficulty} 
@@ -60,7 +60,7 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
             )
           })}
         </select>
-        <button className="bg-cyan-300 rounded-full py-1 px-3 text-gray-700 w-1/3 font-semibold">START</button>
+        <button className="bg-cyan-300 rounded-full text-3xl md:text-base py-1 px-3 text-gray-700 w-full md:w-1/3 font-semibold">START</button>
       </form>
     </div>
   )

@@ -7,10 +7,10 @@ function Results({ name, score }) {
 
   useEffect(() => {
     if(!name) navigate("/")
-  }, [navigate])
+  }, [])
 
   return (
-    <div className="h-60 flex justify-center items-center text-7xl font-semibold text-cyan-300">
+    <div className="h-1/2 flex justify-center items-center text-2xl md:text-7xl font-semibold text-cyan-300">
       <h1>Congrats {name}, your score is: {score}</h1>
     </div>
   )

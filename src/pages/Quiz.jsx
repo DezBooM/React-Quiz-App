@@ -14,8 +14,8 @@ function Quiz({ questions, score, setScore, name }) {
 
   return (
     <div className="mt-2">
-      <h1 className="text-center text-3xl text-cyan-300">Welcome {name}</h1>
-      <div className="flex justify-around text-cyan-300 text-lg">
+      <h1 className="text-center text-2xl md:text-3xl text-cyan-300">Welcome {name}</h1>
+      <div className="flex mr-3 ml-1 mt-2 justify-between md:justify-around text-cyan-300 text-lg">
         {questions.length > 0 && <span>{questions[currentQuestion].category}</span>}
         <span>Score: {score}</span>
       </div>
