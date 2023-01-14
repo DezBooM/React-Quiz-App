@@ -44,6 +44,7 @@ function App() {
 
   useEffect(() => {
     setScore(0)
+    setQuestions([])
   }, [name])
 
   return (
@@ -51,8 +52,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home handleChange={handleChange} {...searchParams} handleName={handleName} {...name} handleSubmit={handleSubmit} /> } />
-        <Route path="/quiz" element={<Quiz questions={questions} score={score} setScore={setScore} name={name} />} />
-        <Route path="/results" element={<Results name={name} score={score} />} />
+        <Route path="/quiz" element={<Quiz questions={questions} score={score} setScore={setScore} name={name} setQuestions={setQuestions} />} />
+        <Route path="/results" element={<Results name={name} score={score} {...searchParams} />} />
       </Routes>
       <Footer />
     </div>

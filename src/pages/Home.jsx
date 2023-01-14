@@ -5,7 +5,6 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
 
   const [categories, setCategories] = useState(() => JSON.parse(localStorage.getItem("categories")) || [])
   const difficultyArray = ["Easy", "Medium", "Hard"]
-  
 
   const getCategories = async () => {
     if(categories.length === 0) {
@@ -28,12 +27,13 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
       <img src={quizImg} alt="Quiz image" />
       <form className="flex flex-col items-center justify-start mt-4 md:mt-20 gap-2 md:gap-10" onSubmit={handleSubmit} >
         <input 
-          className="border border-cyan-300 bg-gray-700 text-cyan-300 rounded-lg outline-none px-4 py-1 w-full md:w-2/3 placeholder-cyan-300 text-xl md:text-base"
+          className="focus:placeholder-opacity-30 border border-cyan-300 bg-gray-700 text-cyan-300 rounded-lg outline-none px-4 py-1 w-full md:w-2/3 placeholder-cyan-300 text-xl md:text-base"
           type="text" 
           placeholder="Enter your name" 
           value={name} 
           onChange={handleName} 
-          required/>
+          required
+          autoFocus/>
         <select  
           className="border border-cyan-300 outline-none text-xl md:text-base w-full md:w-2/3 rounded-md text-cyan-300 bg-gray-700 px-3 py-1"
           name="category" 
