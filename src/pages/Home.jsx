@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import quizImg from "../image/quiz.svg"
 
-function Home({ handleChange, category, difficulty, handleName, name, handleSubmit }) {
+function Home({ handleChange, category, difficulty, handleName, name, handleSubmit, setQuestions, setScore }) {
 
   const [categories, setCategories] = useState(() => JSON.parse(localStorage.getItem("categories")) || [])
   const difficultyArray = ["Easy", "Medium", "Hard"]
@@ -20,6 +20,8 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
 
   useEffect(() => {
     getCategories().catch(err => console.log(err))
+    setQuestions([])
+    setScore(0)
   }, [])
 
   return (
@@ -38,9 +40,8 @@ function Home({ handleChange, category, difficulty, handleName, name, handleSubm
           className="border border-cyan-300 outline-none text-xl md:text-base w-full md:w-2/3 rounded-md text-cyan-300 bg-gray-700 px-3 py-1"
           name="category" 
           onChange={handleChange} 
-          value={category} 
-          required>
-          <option disabled value="">Select Category</option>
+          value={category} >
+          <option value="">Any Category</option>
           {categories.map(item => {
           return (
               <option key={item.id} value={item.id}>{item.name}</option>
