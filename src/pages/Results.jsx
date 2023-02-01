@@ -2,19 +2,19 @@ import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
 function Results({ name, score }) {
-
   const navigate = useNavigate()
 
   const getText = () => {
-    if(score === 0) return `Wow ${name}, your score is ${score}. At least you tried. `
-      else if(score < 5) return `Your score is ${score}, not bad ${name}.`
-      else if(score < 9) return `Congrats ${name}, your score is: ${score}.`
-      else if(score === 10) return `Perfect score! You're a legend ${name}!`
+    if (score === 0)
+      return `Wow ${name}, your score is ${score}. At least you tried. `
+    else if (score < 5) return `Your score is ${score}, not bad ${name}.`
+    else if (score < 9) return `Congrats ${name}, your score is: ${score}.`
+    else if (score === 10) return `Perfect score! You're a legend ${name}!`
   }
   const getTextBasedOnScore = getText()
 
   useEffect(() => {
-    if(!name) navigate("/")
+    if (!name) navigate("/")
   }, [])
 
   return (
